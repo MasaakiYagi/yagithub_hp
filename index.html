@@ -23,33 +23,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link text-light" href="#top">Top</a>
-                    </li>
-                    <!--
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle  text-light" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown">
-                            ジャンル
-                        </a>
-                        <div class="dropdown-menu mt-3" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">男優</a>
-                            <a class="dropdown-item" href="#">女優</a>
-                            <a class="dropdown-item" href="#">歌手</a>
-                            <a class="dropdown-item" href="#">バラエティ</a>
-                        </div>
-                    </li>
-                    -->
-                    <li class="nav-item active">
-                        <a class="nav-link text-light" href="#aboutme">AboutMe</a>
+                        <a href="#top" class="nav-link text-light">Top</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link text-light" href="#skills">Skills</a>
+                        <a href="#aboutme" class="nav-link text-light">AboutMe</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link text-light" href="#works">Works</a>
+                        <a href="#skills" class="nav-link text-light">Skills</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link text-light" href="#gallery">Gallery</a>
+                        <a href="#works" class="nav-link text-light">Works</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="#gallery" class="nav-link text-light">Gallery</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
@@ -82,7 +68,7 @@
         </div>
 
         <!-- AboutMe -->
-        <div class="container mt-5" id="aboutme">
+        <div class="container mt-5" id="aboutme" style="min-height: 95vh;">
             <h1 class="section-title">About Me</h1>
             <div class="row mt-4">
                 <div class="col-lg-4 d-flex align-items-center justify-content-center my-5">
@@ -134,7 +120,7 @@
         </div>
 
         <!-- Skills -->
-        <div class="container mt-5" id="skills">
+        <div class="container mt-5" id="skills" style="min-height: 95vh;">
             <h1 class="section-title">Skills</h1>
             <p class="text-light">Under construction</p>
             <div class="card-deck m-3 justify-content-center">
@@ -184,7 +170,7 @@
         </div>
 
         <!-- Works -->
-        <div class="container mt-5" id="works">
+        <div class="container mt-5" id="works" style="min-height: 95vh;">
             <h1 class="section-title">Works</h1>
             <p class="text-light">Under construction</p>
             <div class="card-deck m-3 justify-content-center">
@@ -221,7 +207,7 @@
         </div>
 
         <!-- Gallery -->
-        <div class="container mt-5" id="gallery">
+        <div class="container mt-5" id="gallery" style="min-height: 95vh;">
             <h1 class="section-title">Gallery</h1>
             <p class="text-light">Under construction</p>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -257,23 +243,23 @@
         <!-- Optional JavaScript; choose one of the two! -->
 
         <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+        
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        -->
+
         <!-- スムーズスクロール部分の記述 -->
         <script>
             $(function(){
-            // #で始まるアンカーをクリックした場合に処理
-                $('a[href^=#]').click(function() {
-                    // スクロールの速度
-                    var speed = 400; // ミリ秒
-                    // アンカーの値取得
-                    var href= $(this).attr("href");
-                    // 移動先を取得
-                    var target = $(href == "#" || href == "" ? 'html' : href);
-                    // 移動先を数値で取得
-                    var position = target.offset().top;
-                    // スムーススクロール
-                    $('body text-white bg-dark,html').animate({scrollTop:position}, speed, 'swing');
+                $("a[href^='#']").click(function(){
+                    var target = $(this.hash);
+                    var position = $(target).offset().top -100;
+                    $('html,body').animate({scrollTop: position}, 400);
                     return false;
                 });
             });
@@ -297,11 +283,6 @@
             })
             })
         </script>
-        <!-- Option 2: Separate Popper and Bootstrap JS -->
-        <!--
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-        -->
+
     </body text-white bg-dark>
 </html>
